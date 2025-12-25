@@ -67,21 +67,39 @@ I2C Address Allocation
 
   Controller routine (each ~200ms)
     Controller sends test address (0x09 for example)
-      0x08 WRITE 0x00 0x01 0x09 STOP
-    Request acknowlegement from address
-      0x09 W 0x255 STOP
-    If acknowlegement recieved, send ack of ack
-      0x09 W 0x255 0x01
-    Delay a few ms and begin communication with device & increment test address
+      0x08 WRITE 0xFF 0x01 0x09 STOP
+    
+    Controller tests address
+      0x09
+      WRITE
+      0xFF (switch to control register)
+      0x00 (pointer = 0x00)
+      0x00 (write 0x00)
+      0x09 (write expected address)
+    
+    Controller sets pointer
+      0x09 WRITE 0xFF (switch to control register)
+    
+    Controller requests 2 bytes
+      0x00 0x09
+    
+    Recieves 0x09 as expected
   
   Device startup
     Begin Wire on 0x08
     Recieve message from controller
     Switch to assigned address
-    Acknowlege controller on next request
-      0x00 0x09
     Enable power on next device
 
+
+Control register:
+0x00 0x00
+0x01 I2C Address
+0x02 Enable power = 0x01
+0x03 Enable high calibration (all keys) = 0x01
+0x04 Enable low calibration = 0x01
+0x05 Key to calibrate
+0x06..0x08 LED color
 
 */
 
@@ -101,6 +119,7 @@ I2C Address Allocation
 
 #define DEVICE_ADDR 0x69
 #define REGISTER_SIZE 0xFF
+#define C_REGISTER_SIZE 0x0F
 
 #define THRESH_HIGH 150
 #define THRESH_LOW  50
@@ -115,23 +134,48 @@ uint16_t allValuesNowC[7];
 uint16_t allValuesNowD[7];
 
 volatile uint8_t DeviceRegisters[REGISTER_SIZE];
+volatile uint8_t ControlRegisters[C_REGISTER_SIZE];
 volatile uint8_t WirePointer = 0;
 
 volatile uint8_t NewAddress = 0x00;
+volatile uint8_t af = 0x00;
 
-int PowerSwitchPin = 5;
+int PowerSwitchPin = 16;
+int CalibrationEnablePin = 15;
 
 
 // I2C Functions
 
 uint8_t startupAddressAlloc(){
-
   Wire.begin(0x08);
-  Wire.onReceive(receiveHandler);
-  Wire.onRequest(requestHandler);
-  while (NewAddress == 0x00) {}
-  Wire.end();
+  Serial.println("Wire started on 0x08");
+  Wire.onReceive(startupWireHandler);
+  Serial.println("Handler set");
+  while (!af) {Serial.println(millis()); delay(10);}
+  Serial.println(NewAddress);
+  
   return NewAddress;
+}
+
+
+void startupWireHandler(int nb) {
+  if (Wire.read() == 0xFF) { 
+    Serial.println("Recieved 0xFF");
+    if (Wire.read() == 0x01) {
+      Serial.println("Recieved 0x01");
+      NewAddress = Wire.read();
+      Serial.print("Recieved new addr: 0d");
+      Serial.println(NewAddress);
+      delay(1);
+      Serial.println("Writing 0xd");
+      Wire.write(0x00); 
+      Serial.print("Writing 0d");
+      Serial.println(NewAddress);
+      Wire.write(NewAddress);
+      delay(10);
+      af = 1;
+    }
+  }
 }
 
 
@@ -142,12 +186,45 @@ void receiveHandler(int numbytes){
   int nb;
   Wire.getBytesRead();
   WirePointer = Wire.read();
+
+  Serial.println();
+  Serial.println("Recieve handler");
+
+  Serial.println(millis());
+  Serial.print("Pointer: 0d");
+  Serial.println(WirePointer);
+
+  if (WirePointer == 0xFF) {
+
+      Serial.println("Control register selected");
+
+      numbytes--;
+      if (Wire.available()){
+        WirePointer = Wire.read();
+      }
+      else {return;}
+
+      Serial.print("Ctl addr: 0d");
+      Serial.println(WirePointer);
+
+      numbytes--;
+      nb = numbytes;
+      while (numbytes > 0) {
+        ReadData = Wire.read();
+        //if (nb == numbytes && ReadData == 0x01) {NewAddress = Wire.read(); return;}
+        Serial.print("Recieved into register: 0d"); Serial.println(ReadData);
+        ControlRegisters[WirePointer] = ReadData;
+      WirePointer++;
+      numbytes--;
+    }
+    return;
+  }
+
   numbytes--;
   nb = numbytes;
     while (numbytes > 0) {
       ReadData = Wire.read();
-      if (nb == numbytes && ReadData == 0x01) {NewAddress = Wire.read(); return;}
-      else {DeviceRegisters[WirePointer] = ReadData;}
+      DeviceRegisters[WirePointer] = ReadData;
       WirePointer++;
       numbytes--;
     }
@@ -157,24 +234,35 @@ void receiveHandler(int numbytes){
 void requestHandler(){
   uint8_t bytes_read = Wire.getBytesRead();
   #ifdef DEBUG_SERIAL
+  Serial.println();
+  Serial.println("Request handler");
   Serial.print("Bytes read: ");
   Serial.println(bytes_read);
   Serial.print("Pointer: ");
   Serial.println(WirePointer);
   #endif
 
-  if (WirePointer == 0xFF) {
-    if (bytes_read == 0x02) {Wire.write(0x00); Wire.write(NewAddress); return;}
-    
-    // command to enable next module
-    if (bytes_read == 0x01) {Wire.write(0x01); digitalWrite(PowerSwitchPin, LOW); return;}
-  }
-
   WirePointer += bytes_read;
   // Update last-read values
   if (WirePointer == 0xC0) {
     for (uint8_t k = 0; k < 0x20; k++) {DeviceRegisters[k + 0xA0] = DeviceRegisters[k + 0x20];}
   }
+
+  if (WirePointer == 0xFF) {
+    #ifdef DEBUG_SERIAL
+    Serial.println("Control register selected for read");
+    #endif
+    for (byte i = 0; i < C_REGISTER_SIZE; i++) {
+      if (i > C_REGISTER_SIZE) {return;}
+      #ifdef DEBUG_SERIAL
+      Serial.print("Writing to Wire: 0d");
+      Serial.println(ControlRegisters[i]);
+      #endif
+      Wire.write(ControlRegisters[i]);
+    }
+    return;
+  }
+
 
 
   for (byte i = 0; i < REGISTER_SIZE; i++) {
@@ -192,6 +280,7 @@ void requestHandler(){
   }
 
 }
+
 
 
 // Key reading & calibration functions
@@ -382,15 +471,25 @@ void setup() {
   pinMode(PowerSwitchPin, OUTPUT);
   digitalWrite(PowerSwitchPin, HIGH);
 
+  pinMode(CalibrationEnablePin, INPUT);
+
   // Serial debug setup
-  #ifdef DEBUG_SERIAL
+  //#ifdef DEBUG_SERIAL
   Serial.begin(115200);
-  #endif
+  Serial.println("Serial ok");
+  //#endif
   
   // Do address allocation; begin Wire
-  Wire.begin(startupAddressAlloc());
+  delay(100);
+  uint8_t AddressAlloc;
+  while (!NewAddress) {startupAddressAlloc();}
+  Wire.end();
+  Serial.print("Beginning wire on 0x");
+  Serial.println(NewAddress);
+  Wire.begin(NewAddress);
 
   // Handlers for I2C
+  Serial.println("Assigning handlers");
   Wire.onReceive(receiveHandler);
   Wire.onRequest(requestHandler);
 
@@ -400,11 +499,13 @@ void setup() {
 
   getAnalogValues();
 
-  if (EEPROM.read(0x20) == 255 or digitalRead(6)) {
+  if (EEPROM.read(0x20) == 255 or digitalRead(CalibrationEnablePin)) {
     doCalibrationRoutine();
     writeStoredCalibration();
   }
   else {getStoredCalibration();}
+
+  Serial.println("Beginning main loop");
 
 }
 
@@ -440,6 +541,6 @@ void loop() {
   Serial.println();
   #endif
 
-  Serial.print("us:");
-  Serial.println(nus - us);
+  //Serial.print("us:");
+  //Serial.println(nus - us);
 }

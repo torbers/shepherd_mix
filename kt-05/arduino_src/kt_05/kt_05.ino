@@ -22,12 +22,73 @@ Hardware:
 #define SCREEN_ADDRESS 0x3c ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+#define WIRE_CLOCK 1000000
+
+uint8_t BeginningAddress = 0x08;
+uint8_t NextNewAddress1 = BeginningAddress + 1;
+uint8_t NextNewAddress0 = BeginningAddress + 1;
+
+
+// Scan for newly connected devices, allocate address
+// Takes as arg 0 for Wire or 1 for Wire1
+uint8_t findNextNewModule1() {
+  Serial.print("Beginning on 0d");
+  Serial.println(BeginningAddress);
+
+  Wire1.beginTransmission(BeginningAddress);
+  Wire1.write(0xFF);
+  Wire1.write(0x01);
+  Wire1.write(NextNewAddress1);
+  Wire1.endTransmission();
+
+  delay(5);
+
+  Serial.print("Testing 0d");
+  Serial.println(NextNewAddress1);
+
+  Wire1.beginTransmission(NextNewAddress1);
+  Wire1.write(0xFF);
+  Wire1.write(0x00);
+  Wire1.write(0x00);
+  Wire1.write(NextNewAddress1);
+  Wire1.endTransmission();
+
+  Wire1.beginTransmission(NextNewAddress1);
+  Wire1.write(0xFF);
+  Wire1.endTransmission();
+
+  delay(5);
+
+  uint8_t recieved_addr = 0x00;
+
+  Wire1.requestFrom(NextNewAddress1, 2);
+
+  if (Wire1.available()) {
+    Serial.println("W avail...");
+    uint8_t wr = Wire1.read();
+    Serial.println(wr);
+
+    if (wr == 0x00) {
+      Serial.println("Recieved 0x00");
+      recieved_addr = Wire1.read();
+      Serial.print("Recieved addr 0d");
+      Serial.println(recieved_addr);
+    }
+  }
+
+  if (recieved_addr == NextNewAddress1) {
+    NextNewAddress1++;
+    return NextNewAddress1 - 1;
+  }
+  else {return 0x00;}
+}
 
 void setup() {
 
   // USB serial for debug
   // (OK to leave activated for RP2040)
   Serial.begin(115200);
+  Serial.println("OK");
 
   //  I2C SETUP
   // Wire 0 pins: SDA = 4; SCL = 5. Right-side pin connector
@@ -35,11 +96,16 @@ void setup() {
   // Set clock to 1 MHZ
   // Technically out of spec for ATTiny but it works and we need low latency
   // (Change later if it creates too much interference or stops working)
-  Wire.setClock(1000000);
-  Wire1.setClock(1000000);
+  Wire.setClock(WIRE_CLOCK);
+  Wire1.setClock(WIRE_CLOCK);
 
-  Wire.begin()
-  Wire1.begin()
+  Wire.setSDA(4);
+  Wire.setSCL(5);
+  Wire1.setSDA(2);
+  Wire1.setSCL(3);
+
+  Wire.begin();
+  Wire1.begin();
 
   delay(100);
 
@@ -57,9 +123,24 @@ void setup() {
   delay(100);
   display.clearDisplay();
 
+
+  // Find first module
+  while(!findNextNewModule1()) {
+    delay(500);
+
+
+  }
+  Serial.println(NextNewAddress1);
+
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+    Wire1.beginTransmission(0x09);
+    Wire1.write(0x00);
+    Wire1.endTransmission();
+    Wire1.requestFrom(0x09, 4);
+    while (Wire1.available()) {Serial.println(Wire1.read());}
 
 }

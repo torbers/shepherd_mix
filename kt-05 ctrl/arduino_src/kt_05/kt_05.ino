@@ -44,6 +44,9 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #define WIRE1_SDA 2
 #define WIRE1_SCL 3
 
+#define POWER_ENABLE_PIN_0 6
+#define POWER_ENABLE_PIN_1 7
+
 #define DEFAULT_MIDI_CHANNEL 0 // MIDI channel 1
 
 
@@ -122,6 +125,7 @@ Module Wire1ModuleChain[16];
 // TODO pass TwoWire Wire or Wire1
 // Scan for newly connected devices, allocate address
 uint8_t findNextNewModule1() {
+
   Serial.print("Beginning on 0d");
   Serial.println(BeginningAddress);
 
@@ -219,6 +223,11 @@ void setup() {
   Serial.begin(115200);
   Serial.println("OK");
 
+  pinMode(POWER_ENABLE_PIN_0, OUTPUT);
+  pinMode(POWER_ENABLE_PIN_1, OUTPUT);
+  digitalWrite(POWER_ENABLE_PIN_0, HIGH);
+  digitalWrite(POWER_ENABLE_PIN_1, HIGH);
+
   //  I2C SETUP
   // Wire 0 pins: SDA = 4; SCL = 5. Right-side pin connector
   // Wire 1 pins: SDA = 2; SCL = 3. Left-side pin connector
@@ -252,11 +261,15 @@ void setup() {
   delay(100);
   display.clearDisplay();
 
+  // reset all modules
+  digitalWrite(POWER_ENABLE_PIN_1, HIGH);
+  delay(200);
+  digitalWrite(POWER_ENABLE_PIN_1, LOW);
+  delay(200);
 
   // Find first module
   while(!findNextNewModule1()) {
     delay(500);
-
 
   }
   Serial.println(NextNewAddress1);
@@ -268,7 +281,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
     Wire1.beginTransmission(0x09);
-    Wire1.write(0xC0);
+    Wire1.write(0x20);
     Wire1.endTransmission();
     Wire1.requestFrom(0x09, 0x20);
     Serial.print("Changes register:");

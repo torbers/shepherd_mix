@@ -102,18 +102,17 @@ void README() {
   0x02 0x01 (Module codename)
 
   // TODO:
-  0x02 Enable power = 0x01
-  0x03 Enable high calibration (all keys) = 0x01
-  0x04 Enable low calibration = 0x01
-  0x05 Key to calibrate
-  0x06..0x08 LED color
+  0x03 Enable power = 0x01
+  0x04 Enable high calibration (all keys) = 0x01
+  0x05 Enable low calibration = 0x01
+  0x06 Key to calibrate
+  0x08..0xA LED color
 
   */
 }
 
 #include <Wire.h>
 #include <EEPROM.h>
-#include <
 
 //#define DEBUG_SERIAL
 //#define WIRE_DEBUG
@@ -545,6 +544,7 @@ void setup() {
 void loop() {
   us = nus;
   nus = micros();
+  digitalWrite(PowerSwitchPin, ControlRegisters[0x02]);
   // Get key values
   getAnalogValues();
   getKeyChanges();

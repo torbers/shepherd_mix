@@ -12305,15 +12305,15 @@
 	(symbol
 		(lib_id "easyeda2kicad:YZ165615055F-04025-01")
 		(at 532.13 102.87 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0a8a7244-1ed3-4102-b077-1f018c4d93fa")
 		(property "Reference" "U9"
-			(at 535.94 101.5999 0)
+			(at 535.94 104.1401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12322,7 +12322,7 @@
 			)
 		)
 		(property "Value" "Pogo Pin Left"
-			(at 535.94 104.1399 0)
+			(at 535.94 101.6001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12331,7 +12331,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:CONN-SMD_4P-L11.0-W5.5-P2.50_YZ165615055F-04025-01"
-			(at 532.13 114.3 0)
+			(at 532.13 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12358,7 +12358,7 @@
 			)
 		)
 		(property "LCSC Part" "C5296819"
-			(at 532.13 116.84 0)
+			(at 532.13 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22580,15 +22580,15 @@
 	(symbol
 		(lib_id "easyeda2kicad:YZ199315035T-04025-01")
 		(at 532.13 116.84 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ef0bfa8b-2b89-4045-b299-cadb267f7609")
 		(property "Reference" "CN4"
-			(at 535.94 115.5699 0)
+			(at 535.94 118.1101 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22597,7 +22597,7 @@
 			)
 		)
 		(property "Value" "Pogo Pin Receptor Right"
-			(at 535.94 118.1099 0)
+			(at 535.94 115.5701 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22606,7 +22606,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:CONN-SMD_YZ199315035T-04025-01"
-			(at 532.13 128.27 0)
+			(at 532.13 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22633,7 +22633,7 @@
 			)
 		)
 		(property "LCSC Part" "C5296825"
-			(at 532.13 130.81 0)
+			(at 532.13 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)

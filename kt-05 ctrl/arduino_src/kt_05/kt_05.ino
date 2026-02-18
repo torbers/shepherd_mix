@@ -41,8 +41,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 #define WIRE0_SDA 4
 #define WIRE0_SCL 5
-#define WIRE1_SDA 2
-#define WIRE1_SCL 3
+#define WIRE1_SDA 3
+#define WIRE1_SCL 1
 
 #define POWER_ENABLE_PIN_0 6
 #define POWER_ENABLE_PIN_1 7
@@ -236,14 +236,15 @@ void setup() {
   // (Change later if it creates too much interference or stops working)
   Wire.setClock(WIRE_CLOCK);
   Wire1.setClock(WIRE_CLOCK);
-
+/*
   Wire.setSDA(WIRE0_SDA);
   Wire.setSCL(WIRE0_SCL);
   Wire1.setSDA(WIRE1_SDA);
   Wire1.setSCL(WIRE1_SCL);
+*/
 
-  Wire.begin();
-  Wire1.begin();
+  Wire.begin(WIRE0_SDA, WIRE0_SCL);
+  Wire1.begin(WIRE1_SDA, WIRE1_SCL);
 
   delay(100);
 
@@ -257,9 +258,9 @@ void setup() {
 
   // Show initial display buffer contents on the screen --
   // the library initializes this with an Adafruit splash screen.
-  display.display();
-  delay(100);
-  display.clearDisplay();
+  //display.display();
+  //delay(100);
+  //display.clearDisplay();
 
   // reset all modules
   digitalWrite(POWER_ENABLE_PIN_1, HIGH);
@@ -281,11 +282,11 @@ void loop() {
   // put your main code here, to run repeatedly:
 
     Wire1.beginTransmission(0x09);
-    Wire1.write(0x20);
+    Wire1.write(0x02);
     Wire1.endTransmission();
-    Wire1.requestFrom(0x09, 0x20);
-    Serial.print("Changes register:");
-    while (Wire1.available()) {Serial.print(" 0x"); Serial.print(Wire1.read(), HEX);}
+    Wire1.requestFrom(0x09, 0x01);
+    //Serial.print("Registers:");
+    while (Wire1.available()) {Serial.print(Wire1.read());}//Serial.print(" 0x"); Serial.print(Wire1.read(), HEX);}
     Serial.println();
 
 }

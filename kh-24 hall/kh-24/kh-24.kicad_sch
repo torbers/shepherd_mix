@@ -1699,6 +1699,137 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "easyeda2kicad:28115181DM"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "KEY"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "28115181DM"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:KEY-TH_28115181DM"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C47121944"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "28115181DM_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0) (xy 2.54 0.25) (xy 0.76 0.25) (xy 0.76 0.76) (xy -0.76 0.76) (xy -0.76 0.25)
+						(xy -2.54 0.25) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -2.54 -1.27)
+					(radius 0.51)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 -1.27)
+					(radius 0.51)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -6.35 -1.27 0)
+					(length 3.302)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 6.35 -1.27 180)
+					(length 3.302)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "easyeda2kicad:CD4051BM96"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -8074,6 +8205,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 232.41 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e603a6f-74a7-4841-a3ef-b654cbc61c6d")
+		(property "Reference" "KEY7"
+			(at 232.41 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 232.41 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 232.41 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 232.41 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "eaf3a038-706f-42ee-aa3e-897172d08dc3")
+		)
+		(pin "1"
+			(uuid "9ffcc251-b106-45eb-a2cd-922c2f36bd67")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "easyeda2kicad:SLSS49E-3")
 		(at 431.8 231.14 0)
 		(unit 1)
@@ -8835,6 +9043,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 232.41 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1e818a2d-786c-4fc8-ae31-a152eef08d58")
+		(property "Reference" "KEY9"
+			(at 232.41 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 232.41 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 232.41 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 232.41 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d1fbd473-a498-4aaa-8094-278805f74991")
+		)
+		(pin "1"
+			(uuid "284c448f-2cc3-45ac-a418-4870685061ae")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 322.58 175.26 90)
 		(unit 1)
@@ -8963,6 +9248,237 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "#PWR073")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 262.89 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "244ac5e9-e1af-4b30-adf6-b7bfe4505f24")
+		(property "Reference" "KEY21"
+			(at 262.89 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 262.89 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 262.89 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 262.89 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 262.89 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 262.89 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "66c1ae91-30ea-42c1-bbb2-4420a376f163")
+		)
+		(pin "1"
+			(uuid "b9029425-bdd4-4d1a-8cd0-47212a4ac114")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 262.89 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2a38b915-6f2d-4a24-93f1-0b741eb98588")
+		(property "Reference" "KEY22"
+			(at 262.89 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 262.89 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 262.89 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 262.89 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 262.89 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 262.89 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5f2d1ad1-2a6b-40e1-8374-d770d7b864a7")
+		)
+		(pin "1"
+			(uuid "efcacb53-58e5-4631-89e1-89497c3705d8")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 232.41 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cfb9e51-59d6-443a-969f-71e89bc2de08")
+		(property "Reference" "KEY12"
+			(at 232.41 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 232.41 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 232.41 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 232.41 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cf1d7e73-3725-41c3-9825-fa7b41c9dea4")
+		)
+		(pin "1"
+			(uuid "0f742b85-1fe4-42a6-aba6-44e0b9d7952a")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY12")
 					(unit 1)
 				)
 			)
@@ -9111,6 +9627,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "U29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 262.89 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "31a514e7-da99-4aaa-8ab4-12c52d9ab5c4")
+		(property "Reference" "KEY24"
+			(at 262.89 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 262.89 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 262.89 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 262.89 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 262.89 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 262.89 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fa10a982-58c4-43c4-8902-71640f6b5fc5")
+		)
+		(pin "1"
+			(uuid "e829148b-30f3-4ea4-9bf0-ed0309cd8371")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY24")
 					(unit 1)
 				)
 			)
@@ -10329,6 +10922,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 217.17 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "50af9bcf-dbf5-4ca5-947e-b85b1954f55d")
+		(property "Reference" "KEY1"
+			(at 217.17 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 217.17 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 217.17 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 217.17 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ea3d59c0-3d5f-4197-a457-cad12d2c8609")
+		)
+		(pin "1"
+			(uuid "a1f19c79-38d4-4306-b0f2-9795f974d4c6")
+		)
+		(instances
+			(project ""
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 121.92 181.61 0)
 		(unit 1)
@@ -11019,6 +11689,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 217.17 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "63706525-690b-41c5-92c5-fa09195604ff")
+		(property "Reference" "KEY2"
+			(at 217.17 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 217.17 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 217.17 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 217.17 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "30760bdf-1b7a-4659-89ea-535826032d91")
+		)
+		(pin "1"
+			(uuid "58bd703e-76f0-4b50-ae3e-9ffeec0e5cfd")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "easyeda2kicad:H3V3U10B")
 		(at 73.66 54.61 0)
 		(unit 1)
@@ -11157,6 +11904,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 247.65 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "69775c44-b67e-494f-a1e6-4290983bbecf")
+		(property "Reference" "KEY18"
+			(at 247.65 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 247.65 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 247.65 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 247.65 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ced8f6f8-07b8-4e3f-8371-f11dfbaf95c8")
+		)
+		(pin "1"
+			(uuid "41792c3c-d3a6-4cbf-98f6-b9d7d7ce445e")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY18")
 					(unit 1)
 				)
 			)
@@ -11371,6 +12195,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "#PWR081")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 247.65 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ce0949f-153a-4a0a-8d79-1733173a80d7")
+		(property "Reference" "KEY14"
+			(at 247.65 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 247.65 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 247.65 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 247.65 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5ac3b0e7-8e80-475a-9be8-0ac2b644cbd0")
+		)
+		(pin "1"
+			(uuid "fd1269e4-cbd2-4cbb-82c3-6796716ace2f")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY14")
 					(unit 1)
 				)
 			)
@@ -11793,6 +12694,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 247.65 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70921938-79ab-46d5-bad5-6e24ecf063e4")
+		(property "Reference" "KEY15"
+			(at 247.65 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 247.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 247.65 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 247.65 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "900b40e7-5ccf-43f2-866f-9f0817cc9c6b")
+		)
+		(pin "1"
+			(uuid "555eeb40-d172-406f-bc1a-d9bfe299e242")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 421.64 120.65 270)
 		(unit 1)
@@ -11973,6 +12951,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "U34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 217.17 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "73d70ed6-bfbc-4aa8-8cf9-cea29f69a41e")
+		(property "Reference" "KEY5"
+			(at 217.17 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 217.17 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 217.17 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 217.17 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ccb71229-a1c7-46f7-a348-49f78a29f2d9")
+		)
+		(pin "1"
+			(uuid "6644c51f-0b69-4692-b7fc-c7455a04b1a7")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY5")
 					(unit 1)
 				)
 			)
@@ -13160,6 +14215,160 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 262.89 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "822ea402-f70c-4362-89da-50fe04045f2a")
+		(property "Reference" "KEY23"
+			(at 262.89 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 262.89 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 262.89 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 262.89 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 262.89 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 262.89 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "46fa4c95-1cca-4a1b-9cbe-c5107a7a3749")
+		)
+		(pin "1"
+			(uuid "ea14e8e7-08bf-4980-bf26-aa96dd1ef6f6")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 262.89 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "829caef8-7f0d-48e4-a066-eab92fe3eb7f")
+		(property "Reference" "KEY20"
+			(at 262.89 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 262.89 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 262.89 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 262.89 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 262.89 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 262.89 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "030a9b16-41ef-4725-b18f-24f69c5c1367")
+		)
+		(pin "1"
+			(uuid "99b24e71-4aef-486a-8b2d-1adc8d988d6f")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Regulator_Linear:AP2112K-3.3")
 		(at 39.37 35.56 0)
 		(unit 1)
@@ -13495,6 +14704,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "#PWR059")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 217.17 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90d7d30c-3763-4832-bd8d-f1275c7c9835")
+		(property "Reference" "KEY6"
+			(at 217.17 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 217.17 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 217.17 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 217.17 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ee4b1d20-9250-497e-bca3-064fd9094be7")
+		)
+		(pin "1"
+			(uuid "d305e7b5-af9e-497f-ae9e-20c0af130914")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY6")
 					(unit 1)
 				)
 			)
@@ -13977,6 +15263,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 262.89 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "96791934-32a1-4063-9969-5c1b254835f8")
+		(property "Reference" "KEY19"
+			(at 262.89 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 262.89 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 262.89 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 262.89 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 262.89 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 262.89 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "415b0816-712c-45f1-aaef-bc6aa5b3895a")
+		)
+		(pin "1"
+			(uuid "dbd785d8-5b3a-4dfc-88a5-717a0c1cedf2")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 322.58 219.71 90)
 		(unit 1)
@@ -14436,6 +15799,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 232.41 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9a1e3be9-3148-40b5-83c5-f6d3ce85e8ad")
+		(property "Reference" "KEY10"
+			(at 232.41 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 232.41 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 232.41 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 232.41 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7d9725bf-4fd9-4353-b0ad-b4e1c3e38877")
+		)
+		(pin "1"
+			(uuid "050e3a21-bb7b-4c0f-ad85-0ce9a36bf01c")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:NetTie_2")
 		(at 97.79 82.55 0)
 		(unit 1)
@@ -14805,6 +16245,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 217.17 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aab41d1e-752e-4555-85e1-ab04840cc0dd")
+		(property "Reference" "KEY3"
+			(at 217.17 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 217.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 217.17 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 217.17 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "df7e3017-277f-42c7-a314-c45d10962e83")
+		)
+		(pin "1"
+			(uuid "d408281d-c9ad-419a-927c-566967215162")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 22.86 111.76 0)
 		(unit 1)
@@ -15094,6 +16611,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 232.41 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ad466c9d-d07b-4508-8153-9991de8bbb68")
+		(property "Reference" "KEY11"
+			(at 232.41 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 232.41 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 232.41 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 232.41 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5297df7b-1494-4d17-bff2-7e7343d5228b")
+		)
+		(pin "1"
+			(uuid "d8e04bb5-380b-4c73-b91d-1887a8b8921d")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY11")
 					(unit 1)
 				)
 			)
@@ -17280,6 +18874,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 247.65 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "db64c505-3628-4e0d-a233-033868f7c483")
+		(property "Reference" "KEY13"
+			(at 247.65 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 247.65 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 247.65 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 247.65 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d3b02207-e611-4d8d-bfaf-26f1eaacad16")
+		)
+		(pin "1"
+			(uuid "0abc5770-d2f0-4bb4-bcd1-a357882315af")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 92.71 74.93 90)
 		(unit 1)
@@ -17478,6 +19149,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 217.17 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e11e69c5-267f-4cf0-a2d6-78802d0d44e9")
+		(property "Reference" "KEY4"
+			(at 217.17 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 217.17 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 217.17 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 217.17 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "df466ba2-b6b1-4b10-a444-2d569642deca")
+		)
+		(pin "1"
+			(uuid "30458394-1773-4316-8426-47bd90c73296")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY4")
 					(unit 1)
 				)
 			)
@@ -17831,6 +19579,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 247.65 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e91d16da-4509-406d-a5e4-fe0f320a8829")
+		(property "Reference" "KEY16"
+			(at 247.65 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 247.65 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 247.65 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 247.65 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a711ef99-7f43-4a59-a538-eabb8ed6cc38")
+		)
+		(pin "1"
+			(uuid "24e81206-63cb-4a35-b695-c3d7a9248076")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 349.25 114.3 0)
 		(unit 1)
@@ -17962,6 +19787,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 247.65 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e99e4f4d-7c59-4602-b074-8e301a49ece1")
+		(property "Reference" "KEY17"
+			(at 247.65 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 247.65 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 247.65 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 247.65 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "69ee3838-07d2-4e18-bb82-9c07979400eb")
+		)
+		(pin "1"
+			(uuid "5555fc73-ae65-484e-a6df-6885efc2c464")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY17")
 					(unit 1)
 				)
 			)
@@ -18661,6 +20563,83 @@
 			(project "kh-24"
 				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
 					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:28115181DM")
+		(at 232.41 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fb1c7a8f-e2b0-4261-abd6-039ce11bb12d")
+		(property "Reference" "KEY8"
+			(at 232.41 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "28115181DM"
+			(at 232.41 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "copper:hall_key_footprint"
+			(at 232.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C47121944"
+			(at 232.41 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e1d4803f-852c-413f-b040-e08c2187da39")
+		)
+		(pin "1"
+			(uuid "d7bec43d-e988-4321-a388-e2398a102508")
+		)
+		(instances
+			(project "kh-24"
+				(path "/5a6ff534-c9e9-47c5-b7e7-f35929566bc5"
+					(reference "KEY8")
 					(unit 1)
 				)
 			)

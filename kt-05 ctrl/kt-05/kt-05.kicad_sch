@@ -7133,6 +7133,12 @@
 		(uuid "84e288a5-e95d-41ca-b829-3da527c5fc05")
 	)
 	(junction
+		(at 111.76 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8b1fe358-1f84-4956-928c-831ab7b758c3")
+	)
+	(junction
 		(at 396.24 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7478,6 +7484,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 124.46) (xy 31.75 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e3d210b-ea7c-4397-950f-f773c5c61a6b")
+	)
+	(wire
+		(pts
 			(xy 328.93 40.64) (xy 331.47 40.64)
 		)
 		(stroke
@@ -7808,6 +7824,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 173.99) (xy 111.76 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2550c285-62b0-4cb7-8cbd-e89cbcb2571f")
+	)
+	(wire
+		(pts
 			(xy 443.23 113.03) (xy 445.77 113.03)
 		)
 		(stroke
@@ -7985,6 +8011,16 @@
 			(type default)
 		)
 		(uuid "35f813f3-6d73-4f2d-9e05-62850986bf04")
+	)
+	(wire
+		(pts
+			(xy 111.76 148.59) (xy 109.22 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36b4db6c-c9d8-4878-aee4-26083a3edfc6")
 	)
 	(wire
 		(pts
@@ -8505,6 +8541,16 @@
 			(type default)
 		)
 		(uuid "6933d416-eaf9-4437-b58c-000a7426e706")
+	)
+	(wire
+		(pts
+			(xy 111.76 158.75) (xy 111.76 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69f51aa2-d5b1-40fa-9f79-5ffff32f5980")
 	)
 	(wire
 		(pts
@@ -9108,6 +9154,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 161.29) (xy 111.76 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab2b2fec-64b0-4ee5-ae11-6d4fb0f00b67")
+	)
+	(wire
+		(pts
 			(xy 46.99 78.74) (xy 46.99 81.28)
 		)
 		(stroke
@@ -9355,6 +9411,16 @@
 			(type default)
 		)
 		(uuid "bce27c08-3f06-471e-b8fb-e975084d2cc1")
+	)
+	(wire
+		(pts
+			(xy 111.76 148.59) (xy 111.76 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bec3303f-1a94-4699-8fd2-f9b8c4eeebdd")
 	)
 	(wire
 		(pts
@@ -9875,6 +9941,16 @@
 			(type default)
 		)
 		(uuid "f93d17d4-1731-4d98-a0e5-90657888a520")
+	)
+	(wire
+		(pts
+			(xy 109.22 161.29) (xy 111.76 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9d575bc-a66d-4a20-afc7-0212b7eaa060")
 	)
 	(wire
 		(pts
@@ -10628,6 +10704,28 @@
 			)
 		)
 	)
+	(global_label "BAT_DET"
+		(shape input)
+		(at 29.21 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "66779515-5a02-4ada-95bd-2ba6b85837f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 18.5444 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SCL1"
 		(shape bidirectional)
 		(at 549.91 78.74 180)
@@ -10668,6 +10766,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BAT_DET"
+		(shape input)
+		(at 109.22 161.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6e83dda1-c1cf-4f63-bce8-b10c5b6373a4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 98.5544 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -16568,6 +16688,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 111.76 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "62ed68ff-d4cc-4dff-92a5-b4cdf6690049")
+		(property "Reference" "R11"
+			(at 106.426 155.194 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 108.966 155.194 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 109.982 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 111.76 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 111.76 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "531d5ec3-e44b-4590-9b17-a2fcbd22e183")
+		)
+		(pin "2"
+			(uuid "b2dcf69e-8d1b-4a4b-a870-7982bb27ec19")
+		)
+		(instances
+			(project "kt-05"
+				(path "/aa5e2b95-c80c-4ceb-b804-b3a5918dc7d7"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "easyeda2kicad:YTC1P-6030-01")
 		(at 254 86.36 180)
 		(unit 1)
@@ -18629,6 +18816,71 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
+		(at 109.22 148.59 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a3e288af-a53f-4ea4-a376-195247db7f18")
+		(property "Reference" "#PWR085"
+			(at 113.03 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VBAT"
+			(at 103.124 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.22 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 109.22 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0fc45a1a-b6b6-4a84-9fc8-ce43de2df8de")
+		)
+		(instances
+			(project "kt-05"
+				(path "/aa5e2b95-c80c-4ceb-b804-b3a5918dc7d7"
+					(reference "#PWR085")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VBUS")
 		(at 458.47 120.65 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -19323,6 +19575,72 @@
 			(project "kt-05"
 				(path "/aa5e2b95-c80c-4ceb-b804-b3a5918dc7d7"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 111.76 173.99 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b23952f4-3302-4232-a667-acb8accc539c")
+		(property "Reference" "#PWR083"
+			(at 111.76 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 111.76 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 111.76 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 111.76 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30e8c2ff-57b6-4680-a8df-93fa747ce48d")
+		)
+		(instances
+			(project "kt-05"
+				(path "/aa5e2b95-c80c-4ceb-b804-b3a5918dc7d7"
+					(reference "#PWR083")
 					(unit 1)
 				)
 			)
@@ -23428,6 +23746,73 @@
 			(project "kt-05"
 				(path "/aa5e2b95-c80c-4ceb-b804-b3a5918dc7d7"
 					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 111.76 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ffa571ce-fe08-4bf0-bfa0-222111220f2b")
+		(property "Reference" "R10"
+			(at 106.426 167.894 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 108.966 167.894 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 109.982 167.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 111.76 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 111.76 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "74708945-f6c0-491b-92e8-2065bd18010c")
+		)
+		(pin "2"
+			(uuid "04737adf-0ae4-4218-812c-6e6bcda719a3")
+		)
+		(instances
+			(project "kt-05"
+				(path "/aa5e2b95-c80c-4ceb-b804-b3a5918dc7d7"
+					(reference "R10")
 					(unit 1)
 				)
 			)

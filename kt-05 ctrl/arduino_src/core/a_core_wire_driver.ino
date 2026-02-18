@@ -1,0 +1,3 @@
+
+#define WIRE_CLOCK 1000000
+

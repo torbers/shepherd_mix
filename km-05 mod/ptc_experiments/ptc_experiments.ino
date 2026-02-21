@@ -186,7 +186,7 @@ uint32_t Slider::duration() {
 
 Slider slider1;
 Slider slider2;
-uint8_t ps[NODE_COUNT] = {PIN_PA5, PIN_PA6, PIN_PA7, PIN_PB5, PIN_PB4, PIN_PC1};
+uint8_t ps[NODE_COUNT] = {PIN_PA1, PIN_PA2, PIN_PA3, PIN_PB5, PIN_PB4, PIN_PC1};
 
 
 void setup() {

@@ -7934,16 +7934,6 @@
 	)
 	(wire
 		(pts
-			(xy 320.04 118.11) (xy 317.5 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "315f1453-5485-4dc0-bfa2-35d1c50dcd92")
-	)
-	(wire
-		(pts
 			(xy 444.5 19.05) (xy 447.04 19.05)
 		)
 		(stroke
@@ -8521,6 +8511,16 @@
 			(type default)
 		)
 		(uuid "6645a413-0d44-479c-9373-7f636bf180af")
+	)
+	(wire
+		(pts
+			(xy 307.34 118.11) (xy 304.8 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67872f36-7ed7-405e-b681-bca4cfc767ab")
 	)
 	(wire
 		(pts
@@ -9151,6 +9151,16 @@
 			(type default)
 		)
 		(uuid "aa940bf9-8bb7-48b8-9fe9-b3464d6353a1")
+	)
+	(wire
+		(pts
+			(xy 317.5 118.11) (xy 320.04 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaeb5be6-728a-424e-afd1-2a49ef6ed07f")
 	)
 	(wire
 		(pts
@@ -17178,6 +17188,83 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:BSMD1206-200-6V")
+		(at 312.42 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "716b0ccd-d87f-4152-b7c0-ea97f58346de")
+		(property "Reference" "F2"
+			(at 312.42 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BSMD1206-200-6V"
+			(at 312.42 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:F1206"
+			(at 312.42 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/PTC-Resettable-Fuses_BHFUSE-BSMD1206-200-6V_C883134.html"
+			(at 312.42 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 312.42 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C883134"
+			(at 312.42 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8cd72198-444a-4647-b02a-49955efc6eb4")
+		)
+		(pin "2"
+			(uuid "ac63d209-6eb3-47be-a4d0-b2efda914529")
+		)
+		(instances
+			(project "kt-05"
+				(path "/aa5e2b95-c80c-4ceb-b804-b3a5918dc7d7"
+					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "easyeda2kicad:H3V3U10B")
 		(at 224.79 147.32 0)
 		(unit 1)
@@ -20620,7 +20707,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 317.5 118.11 90)
+		(at 304.8 118.11 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20628,7 +20715,7 @@
 		(dnp no)
 		(uuid "c49138a5-c25a-4ec1-bb86-f6c1738b6647")
 		(property "Reference" "#PWR053"
-			(at 321.31 118.11 0)
+			(at 308.61 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20637,7 +20724,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 311.404 118.11 90)
+			(at 298.704 118.11 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20645,7 +20732,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 317.5 118.11 0)
+			(at 304.8 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20654,7 +20741,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 317.5 118.11 0)
+			(at 304.8 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20663,7 +20750,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 317.5 118.11 0)
+			(at 304.8 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)

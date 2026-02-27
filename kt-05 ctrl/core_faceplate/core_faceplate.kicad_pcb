@@ -3990,6 +3990,19 @@
 			(justify bottom)
 		)
 	)
+	(gr_text "3"
+		(at 76.708 100.838 0)
+		(layer "F.SilkS" knockout)
+		(uuid "422a572e-e41b-45dc-a7e4-f86ee003ba7c")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "TWO-WIRE INTERFACE 1"
 		(at 88.392 60.96 0)
 		(layer "F.SilkS")
@@ -4029,6 +4042,32 @@
 			(justify bottom)
 		)
 	)
+	(gr_text "1"
+		(at 108.204 81.788 0)
+		(layer "F.SilkS" knockout)
+		(uuid "8cbc4836-91a6-4e36-b9e3-f340bf53cf70")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "5"
+		(at 110.998 100.838 0)
+		(layer "F.SilkS" knockout)
+		(uuid "910b0558-1036-4d83-86bf-5a64f9d5e897")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "TWO-WIRE INTERFACE 0"
 		(at 114.808 60.96 0)
 		(layer "F.SilkS")
@@ -4040,6 +4079,19 @@
 				(bold yes)
 			)
 			(justify bottom)
+		)
+	)
+	(gr_text "2"
+		(at 124.714 81.788 0)
+		(layer "F.SilkS" knockout)
+		(uuid "a0081cd5-bba3-4a88-ac7b-11198b113af3")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
 		)
 	)
 	(gr_text "TYPE-C"
@@ -4092,6 +4144,32 @@
 				(bold yes)
 			)
 			(justify bottom)
+		)
+	)
+	(gr_text "0"
+		(at 90.424 81.788 0)
+		(layer "F.SilkS" knockout)
+		(uuid "e36d2d4b-b62d-44ee-aa61-07ed02a0e282")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "4"
+		(at 93.218 100.838 0)
+		(layer "F.SilkS" knockout)
+		(uuid "e6835afa-6a2d-4ca5-8f09-506610eda9e3")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
 		)
 	)
 	(gr_text "MIDI IN"

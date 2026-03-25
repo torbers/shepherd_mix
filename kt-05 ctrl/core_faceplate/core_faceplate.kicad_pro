@@ -516,7 +516,7 @@
       "plot": "./",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "core_faceplate.step",
+      "step": "../../3d/core_faceplate.step",
       "svg": "",
       "vrml": ""
     },

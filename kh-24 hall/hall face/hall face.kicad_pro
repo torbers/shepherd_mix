@@ -516,7 +516,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "hall face.step",
+      "step": "../../3d/hall_faceplate.step",
       "svg": "",
       "vrml": ""
     },

@@ -516,7 +516,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "km-05.step",
+      "step": "../../3d/km-05.step",
       "svg": "",
       "vrml": ""
     },

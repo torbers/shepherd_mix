@@ -1,3 +1,4 @@
+#pragma once
 
 #include <Arduino.h>
 
@@ -14,6 +15,7 @@ class Module {
     uint8_t address;
 
     // Used for deriving velocity
+    unsigned long MicrosAtLastRead;
     unsigned long MicrosSinceLastRead;
 
     // from core

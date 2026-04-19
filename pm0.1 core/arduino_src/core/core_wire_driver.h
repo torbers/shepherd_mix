@@ -3,6 +3,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include "modules.h"
+#include "midi_mgmt.h"
 
 #define WIRE_CLOCK 1000000
 
@@ -17,14 +18,17 @@ class CoreWireDriver {
 
     Module* Chain[MAX_MODULE_COUNT];
     TwoWire* Wire;
+    MidiMgmt* MidiCall;
 
     uint8_t ModuleCount;
 
     bool begin(uint8_t wire_sda, uint8_t wire_scl, uint32_t wire_clock);
+    uint8_t getControlRegVariable(uint8_t address, uint8_t register_address);
+    uint8_t setControlRegVariable(uint8_t address, uint8_t register_address, uint8_t new_value);
     uint8_t getName(uint8_t address);
     uint8_t findNextNewModule();
 
-    uint8_t updateModules();
+    //uint8_t updateModules();
 
-    CoreWireDriver(TwoWire& wire_arg);
+    CoreWireDriver(TwoWire& wire_arg, MidiMgmt& midi_arg);
 };

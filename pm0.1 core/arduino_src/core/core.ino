@@ -4,6 +4,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #include "core_wire_driver.h"
+#include "module_driver.h"
 #include "screen_update.h"
 
 // I2C ports
@@ -29,9 +30,15 @@ Adafruit_NeoPixel pixel(1, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 // Screen
 CoreScreen screen;
 
+// MIDI
+MidiMgmt mid;
+
 // Wire
-CoreWireDriver WireLeft(Wire);
-CoreWireDriver WireRight(Wire1);
+CoreWireDriver WireLeft(Wire, mid);
+CoreWireDriver WireRight(Wire1, mid);
+
+ModuleDriver DLeft(WireLeft);
+ModuleDriver DRight(WireRight);
 
 int timer = 0;
 
@@ -73,6 +80,9 @@ void loop() {
     WireLeft.findNextNewModule();
     WireRight.findNextNewModule();
   }
+
+  DLeft.updateModules();
+  DRight.updateModules();
   
 
 }

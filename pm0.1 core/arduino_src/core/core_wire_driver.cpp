@@ -1,9 +1,10 @@
 
 #include "core_wire_driver.h"
 
-CoreWireDriver::CoreWireDriver(TwoWire& wire_arg) {
+CoreWireDriver::CoreWireDriver(TwoWire& wire_arg, MidiMgmt& midi_arg) {
   ModuleCount = 0;
   Wire = &wire_arg;
+  MidiCall = &midi_arg;
 }
 
 bool CoreWireDriver::begin(uint8_t wire_sda, uint8_t wire_scl, uint32_t wire_clock) {
@@ -11,10 +12,10 @@ bool CoreWireDriver::begin(uint8_t wire_sda, uint8_t wire_scl, uint32_t wire_clo
   return Wire->begin(wire_sda, wire_scl);
 }
 
-uint8_t CoreWireDriver::getName(uint8_t address) {
+uint8_t CoreWireDriver::getControlRegVariable(uint8_t address, uint8_t register_address) {
   Wire->beginTransmission(address);
   Wire->write(0xFF);
-  Wire->write(0x01);
+  Wire->write(register_address);
   Wire->endTransmission();
 
   Wire->requestFrom(address, 1);
@@ -22,16 +23,27 @@ uint8_t CoreWireDriver::getName(uint8_t address) {
   return 0x00;
 }
 
-uint8_t CoreWireDriver::findNextNewModule() {
+uint8_t CoreWireDriver::setControlRegVariable(uint8_t address, uint8_t register_address, uint8_t new_value) {
+  Wire->beginTransmission(address);
+  Wire->write(0xFF);
+  Wire->write(register_address);
+  Wire->write(new_value);
+  Wire->endTransmission();
 
+  Wire->requestFrom(address, 1);
+  if (Wire->available()) {return Wire->read();}
+  return 0x00;
+}
+
+uint8_t CoreWireDriver::getName(uint8_t address) {
+  return getControlRegVariable(address, 0x02);
+}
+
+uint8_t CoreWireDriver::findNextNewModule() {
   Serial.print("Beginning on 0d");
   Serial.println(BeginningAddress);
 
-  Wire->beginTransmission(BeginningAddress);
-  Wire->write(0xFF);
-  Wire->write(0x01);
-  Wire->write(NextNewAddress);
-  Wire->endTransmission();
+  setControlRegVariable(BeginningAddress, 0x01, NextNewAddress);
 
   delay(5);
 
@@ -45,6 +57,7 @@ uint8_t CoreWireDriver::findNextNewModule() {
   Wire->write(NextNewAddress);
   Wire->endTransmission();
 
+
   Wire->beginTransmission(NextNewAddress);
   Wire->write(0xFF);
   Wire->endTransmission();
@@ -55,6 +68,7 @@ uint8_t CoreWireDriver::findNextNewModule() {
   uint8_t recieved_type;
 
   Wire->requestFrom(NextNewAddress, 3);
+
 
   if (Wire->available()) {
     Serial.println("W avail...");
@@ -76,7 +90,7 @@ uint8_t CoreWireDriver::findNextNewModule() {
 
     uint8_t module_type = getName(NextNewAddress);
 
-    switch(module_type) {
+    switch (module_type) {
       case HALL:
         Chain[ModuleCount] = new Hall(NextNewAddress);
         Chain[ModuleCount]->PositionInChain = ModuleCount;
@@ -99,9 +113,4 @@ uint8_t CoreWireDriver::findNextNewModule() {
   else {return 0x00;}
 }
 
-uint8_t updateModules() {
-  for (uint8_t m = 0; Chain[m]->codename != 0xFF; m++;) {
 
-  }
-  return 0x01;
-}

@@ -517,7 +517,7 @@ void loop() {
   #endif
 
   if (NeoUpdate) {
-    for (int i=0; i<8; i++) {pixels.setPixelColor(i, pixels.Color(NeoColors[i*3], NeoColors[i*3+1], NeoColors[i*3+2]));}
+    for (int i=0; i<NUMPIXELS; i++) {pixels.setPixelColor(i, pixels.Color(NeoColors[i*3], NeoColors[i*3+1], NeoColors[i*3+2]));}
     pixels.show();
     NeoUpdate = false;
   }

@@ -24,23 +24,29 @@
 #define CG_STAT 40 // Charge status from ic
 #define BAT_DET 14 // 1/2 battery voltage
 
+
 // NeoPixel
 Adafruit_NeoPixel pixel(1, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
+
 
 // Screen
 CoreScreen screen;
 
+
 // MIDI
 MidiMgmt mid;
+
 
 // Wire
 CoreWireDriver WireLeft(Wire, mid);
 CoreWireDriver WireRight(Wire1, mid);
 
-ModuleDriver DLeft(WireLeft);
-ModuleDriver DRight(WireRight);
+ModuleDriver DLeft(WireLeft, mid, screen);
+ModuleDriver DRight(WireRight, mid, screen);
+
 
 int timer = 0;
+
 
 void setup() {
   pinMode(CG_STAT, INPUT_PULLUP);
@@ -56,7 +62,7 @@ void setup() {
   pixel.show();
 
   // Screen
-  screen.begin();
+  screen.begin(TFT_SCLK, TFT_MISO, TFT_MOSI, TFT_CS);
 
   // Wire
   pinMode(POWER_LEFT, OUTPUT);
@@ -68,21 +74,30 @@ void setup() {
   WireLeft.begin(2, 1, WIRE_CLOCK);
   WireRight.begin(41, 42, WIRE_CLOCK);
 
+  Serial.println("Wire drivers started");
 
+  mid.begin();
 
+  delay(1000);
 
 
 }
 
 void loop() {
   if (millis() - timer > 1000) {
-    timer = 0;
-    WireLeft.findNextNewModule();
-    WireRight.findNextNewModule();
+    timer = millis();
+
+    Serial.println(timer);
+    uint8_t success = WireLeft.findNextNewModule();
+    if (success) {screen.tft.println(success);}
+    success = WireRight.findNextNewModule();
+    if (success) {screen.tft.println(success);}
+    
   }
 
   DLeft.updateModules();
   DRight.updateModules();
   
+  mid.update();
 
 }

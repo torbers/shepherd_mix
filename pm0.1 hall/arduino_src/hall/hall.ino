@@ -100,19 +100,20 @@ void README() {
   0x00 0x00
   0x01 I2C Address
   0x02 0x01 (Module codename)
-
-  // TODO:
   0x03 Enable power = 0x01
+
   0x04 Enable high calibration (all keys) = 0x01
   0x05 Enable low calibration = 0x01
   0x06 Key to calibrate
-  0x08..0xA LED color
+  0x07 Calibration status : 0x00 = Not calibrating, 0x01 = Calibrating
 
+  0x08..0xA LED color
   */
 }
 
 #include <Wire.h>
 #include <EEPROM.h>
+#include <tinyNeoPixel.h>
 
 //#define DEBUG_SERIAL
 //#define WIRE_DEBUG
@@ -126,12 +127,34 @@ void README() {
 #define RC 2
 #define RD 3
 
+#define PowerSwitchPin 4
+#define CalibrationEnablePin 15
+#define NEOPIXEL_PIN 5
+
 #define DEVICE_ADDR 0x69
 #define REGISTER_SIZE 0xFF
 #define C_REGISTER_SIZE 0x0F
 
 #define THRESH_HIGH 240
 #define THRESH_LOW  50
+
+#define NUMPIXELS 1
+
+// MIDI message types
+#define KEY_ON       0x80;
+#define KEY_OFF      0x90;
+#define AFTERTOUCH   0xA0;
+
+// Codes from changes register
+#define FULLY_PRESSED             0b11
+#define PARTIAL_AFTER_FULL        0b10
+#define PARTIAL_AFTER_UNPRESSED   0b01
+#define UNPRESSED                 0b00
+
+// Assigning numbers to modules' codenames in Shepherd System
+#define KT05   0x00 // This control module
+#define KH24   0x01 // 24-key hall keyboard
+#define KC02   0x02 // 2-channel pitch bend/mod/cc controller
 
 int hallValue;
 unsigned long us;
@@ -149,24 +172,11 @@ volatile uint8_t WirePointer = 0;
 volatile uint8_t NewAddress = 0x00;
 volatile uint8_t af = 0x00;
 
-int PowerSwitchPin = 16;
-int CalibrationEnablePin = 15;
+bool NeoUpdate = false;
+uint8_t NeoColors[3];
 
-// MIDI message types
-#define KEY_ON       0x80;
-#define KEY_OFF      0x90;
-#define AFTERTOUCH   0xA0;
 
-// Codes from changes register
-#define FULLY_PRESSED             0b11
-#define PARTIAL_AFTER_FULL        0b10
-#define PARTIAL_AFTER_UNPRESSED   0b01
-#define UNPRESSED                 0b00
-
-// Assigning numbers to modules' codenames in Shepherd System
-#define KT05   0x00 // This control module
-#define KH24   0x01 // 24-key hall keyboard
-#define KC02   0x02 // 2-channel pitch bend/mod/cc controller
+tinyNeoPixel pixels = tinyNeoPixel(NUMPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
 
 // I2C Functions
@@ -253,8 +263,9 @@ void receiveHandler(int numbytes){
           Serial.print("Recieved into register: 0d"); Serial.println(ReadData);
         #endif
         ControlRegisters[WirePointer] = ReadData;
-      WirePointer++;
-      numbytes--;
+        if (WirePointer >= 0x08) {NeoColors[WirePointer - 0x08] = ReadData; NeoUpdate = true;}
+        WirePointer++;
+        numbytes--;
     }
     return;
   }
@@ -502,13 +513,18 @@ void setup() {
   pinMode(PowerSwitchPin, OUTPUT);
   digitalWrite(PowerSwitchPin, HIGH);
 
-  pinMode(CalibrationEnablePin, INPUT);
+  pinMode(CalibrationEnablePin, INPUT_PULLUP);
 
   // Serial debug setup
   //#ifdef DEBUG_SERIAL
   Serial.begin(115200);
   Serial.println("Serial ok");
   //#endif
+
+  pixels.begin();
+  pixels.clear();
+  pixels.setPixelColor(0, pixels.Color(255, 0, 255));
+  pixels.show();
   
   // Do address allocation; begin Wire
   delay(100);
@@ -530,7 +546,7 @@ void setup() {
 
   getAnalogValues();
 
-  if (EEPROM.read(0x20) == 255 or digitalRead(CalibrationEnablePin)) {
+  if (EEPROM.read(0x20) == 255 or !digitalRead(CalibrationEnablePin)) {
     doCalibrationRoutine();
     writeStoredCalibration();
   }
@@ -571,6 +587,32 @@ void loop() {
 
     Serial.println();
   #endif
+
+  if (NeoUpdate) {
+    pixels.setPixelColor(1, pixels.Color(NeoColors[0], NeoColors[1], NeoColors[2]));
+    pixels.show();
+    NeoUpdate = false;
+  }
+
+  // All keys high point calibration
+  if (ControlRegisters[0x04]) {
+    ControlRegisters[0x07] = 0x01;
+    calibrateAllKeysHigh();
+    writeStoredCalibration();
+    ControlRegisters[0x04] = 0x00;
+    ControlRegisters[0x07] = 0x00;
+  }
+
+  // Calibrate specific key low point
+  if (ControlRegisters[0x05]) {
+    ControlRegisters[0x07] = 0x01;
+    calibrateKeyLow(ControlRegisters[0x06]);
+    writeStoredCalibration();
+    ControlRegisters[0x05] = 0x00;
+    ControlRegisters[0x07] = 0x00;
+  }
+
+  digitalWrite(PowerSwitchPin, ControlRegisters[0x03]);
 
   //Serial.print("us:");
   //Serial.println(nus - us);

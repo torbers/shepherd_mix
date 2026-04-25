@@ -5,28 +5,32 @@
 #define HALL 0x01
 #define MODS 0x02
 
+#define DEFAULT_MIDI_CHANNEL 0
+
 class Module {
   public:
     // Product name
-    uint8_t codename;
+    uint8_t codename = 0xFF;
 
     // Addresses are ALWAYS assigned so lowest = closest to control module
     // Module.address - BeginningAddress = distance from ctl
-    uint8_t address;
+    uint8_t address = 0xFF;
 
     // Used for deriving velocity
-    unsigned long MicrosAtLastRead;
-    unsigned long MicrosSinceLastRead;
+    unsigned long MicrosAtLastRead = 0;
+    unsigned long MicrosSinceLastRead = 0;
 
     // from core
-    uint8_t PositionInChain;
+    uint8_t PositionInChain = 0;
 
     // update when new module is attached; position from left
-    uint8_t PositionLeftToRight;
+    uint8_t PositionLeftToRight = 0;
 
     // Settings
     // Used by all modules
-    uint8_t MidiChannel; //  = DEFAULT_MIDI_CHANNEL;
+    uint8_t MidiChannel = DEFAULT_MIDI_CHANNEL;
+
+    bool newm = true;
 
     Module();
 };

@@ -25,10 +25,15 @@ class ModuleDriver {
 
     uint8_t updateModules();
 
+    uint8_t updateHallDebug(Module* hall);
+    uint8_t updateHall(Module* hall);
+  /*
     uint8_t* getChangesHall(uint8_t addr);
     uint8_t* getValuesHall(uint8_t addr);
     uint8_t* getCalibValuesHall(uint8_t addr);
+    uint8_t* getAllValuesHall(uint8_t addr);
     uint8_t handleChangesRegisterHall(uint8_t *changes_register);
+  */
     uint8_t* keyToNoteOctHall(uint8_t key);
     uint8_t sortKeys(uint8_t key_number);
     uint8_t doBottomOutCalibrationRoutine(uint8_t addr);

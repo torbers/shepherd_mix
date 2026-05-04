@@ -589,7 +589,7 @@ void loop() {
   #endif
 
   if (NeoUpdate) {
-    pixels.setPixelColor(1, pixels.Color(NeoColors[0], NeoColors[1], NeoColors[2]));
+    pixels.setPixelColor(0, pixels.Color(NeoColors[0], NeoColors[1], NeoColors[2]));
     pixels.show();
     NeoUpdate = false;
   }
